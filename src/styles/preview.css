@@ -1,9 +1,15 @@
 .poster-viewport {
   position: relative;
   min-height: 850px;
-  border-radius: 14px;
-  border: 1px solid var(--strong-line);
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(170, 203, 226, 0.22);
   background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 22%),
+    radial-gradient(
+      circle at 18% 12%,
+      rgba(255, 149, 102, 0.12),
+      transparent 30%
+    ),
     linear-gradient(180deg, rgba(255, 255, 255, 0.06), transparent 28%),
     radial-gradient(
       circle at 82% 16%,
@@ -14,6 +20,9 @@
   display: grid;
   place-items: center;
   overflow: hidden;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.05),
+    inset 0 -24px 48px rgba(0, 0, 0, 0.14);
 }
 
 .poster-viewport::before {
@@ -22,9 +31,16 @@
   inset: 0;
   pointer-events: none;
   background-image:
-    linear-gradient(rgba(130, 170, 197, 0.1) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(130, 170, 197, 0.1) 1px, transparent 1px);
+    linear-gradient(rgba(130, 170, 197, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(130, 170, 197, 0.06) 1px, transparent 1px);
   background-size: 26px 26px;
+  mask-image: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.55),
+    rgba(0, 0, 0, 0.18) 25%,
+    rgba(0, 0, 0, 0.18) 75%,
+    rgba(0, 0, 0, 0.55)
+  );
 }
 
 /* ── Poster frame ── */
@@ -37,11 +53,12 @@
   max-width: 100%;
   max-height: 82vh;
   overflow: hidden;
-  border-radius: 4px;
-  border: 1px solid rgba(179, 210, 230, 0.28);
+  border-radius: 6px;
+  border: 1px solid rgba(196, 224, 241, 0.2);
   box-shadow:
-    0 24px 34px rgba(0, 0, 0, 0.5),
-    0 8px 14px rgba(0, 0, 0, 0.42);
+    0 28px 60px rgba(0, 0, 0, 0.54),
+    0 12px 26px rgba(0, 0, 0, 0.36),
+    0 0 0 1px rgba(255, 255, 255, 0.03);
 }
 
 /* ── Ghost canvas: covers ghost layer, preserving poster aspect ratio ── */
@@ -300,22 +317,26 @@
   display: inline-flex;
   align-items: center;
   gap: 5px;
-  padding: 6px 12px;
-  border: 1px solid rgba(137, 176, 200, 0.32);
-  border-radius: 8px;
-  background: rgba(14, 33, 46, 0.85);
-  color: #d5e7f5;
+  padding: 7px 12px;
+  border: 1px solid rgba(159, 194, 216, 0.24);
+  border-radius: 999px;
+  background: rgba(12, 24, 35, 0.78);
+  color: #deedf8;
   font-family: "Spline Sans Mono", monospace;
   font-size: 0.78rem;
   cursor: pointer;
   transition:
     background 0.15s,
-    border-color 0.15s;
+    border-color 0.15s,
+    color 0.15s,
+    box-shadow 0.15s;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
 }
 
 .map-control-btn:hover:not(:disabled) {
-  background: rgba(37, 75, 105, 0.7);
-  border-color: rgba(137, 176, 200, 0.55);
+  background: rgba(21, 43, 60, 0.9);
+  border-color: rgba(132, 203, 236, 0.4);
+  box-shadow: 0 0 0 3px rgba(76, 151, 186, 0.12);
 }
 
 .map-control-btn:disabled {
@@ -324,12 +345,24 @@
 }
 
 .map-control-btn--primary {
-  background: rgba(55, 171, 203, 0.22);
-  border-color: rgba(55, 171, 203, 0.55);
+  background: linear-gradient(
+    135deg,
+    rgba(52, 126, 166, 0.95),
+    rgba(48, 112, 150, 0.95)
+  );
+  border-color: rgba(145, 212, 241, 0.38);
+  color: #f3fbff;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 10px 20px rgba(28, 94, 125, 0.22);
 }
 
 .map-control-btn--primary:hover:not(:disabled) {
-  background: rgba(55, 171, 203, 0.38);
+  background: linear-gradient(
+    135deg,
+    rgba(62, 142, 184, 0.98),
+    rgba(56, 124, 162, 0.98)
+  );
 }
 
 .map-control-btn--mode {
@@ -343,8 +376,9 @@
 }
 
 .map-control-btn.is-active {
-  background: rgba(55, 171, 203, 0.34);
-  border-color: rgba(55, 171, 203, 0.8);
+  background: rgba(68, 163, 204, 0.2);
+  border-color: rgba(132, 203, 236, 0.52);
+  color: #eff9ff;
 }
 
 .map-control-btn--marker-reset {
@@ -374,14 +408,17 @@
   align-items: center;
   gap: 5px;
   margin: 0;
-  padding: 4px 8px;
-  border-radius: 7px;
-  background: rgba(8, 18, 28, 0.42);
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(159, 194, 216, 0.16);
+  background: rgba(8, 18, 28, 0.56);
   font-family: "Spline Sans Mono", monospace;
   font-size: 0.7rem;
   color: rgba(156, 195, 218, 0.7);
   text-align: center;
   white-space: pre-line;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .map-control-hint-icon {
@@ -391,11 +428,14 @@
 
 .settings-info-card {
   margin: 10px;
-  padding: 12px;
-  border: 1px solid rgba(137, 176, 200, 0.3);
-  border-radius: 10px;
-  background: rgba(10, 24, 35, 0.72);
+  padding: 14px;
+  border: 1px solid rgba(166, 198, 221, 0.18);
+  border-radius: var(--radius-md);
+  background: rgba(10, 24, 35, 0.68);
   color: #d5e7f5;
+  box-shadow: var(--shadow-soft);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 .settings-info-title {

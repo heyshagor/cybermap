@@ -77,12 +77,18 @@
     align-items: center;
     justify-content: space-between;
     margin: 0;
-    padding: 0 20px;
-    background: var(--overlay-bg);
-    border-bottom: 1px solid rgba(146, 176, 200, 0.12);
-    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.28);
+    padding: 0 22px;
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent 90%),
+      rgba(9, 16, 24, 0.9);
+    border-bottom: 1px solid rgba(168, 197, 219, 0.14);
+    box-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.03),
+      0 10px 28px rgba(0, 0, 0, 0.24);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     z-index: 50;
-    gap: 14px;
+    gap: 16px;
     flex-shrink: 0;
   }
 
@@ -110,8 +116,9 @@
     font-family: "Bebas Neue", sans-serif;
     font-size: 1.62rem;
     line-height: 1;
-    letter-spacing: 0.03em;
-    color: #ecf5ff;
+    letter-spacing: 0.04em;
+    color: #f2f8fd;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.24);
   }
 
   .desktop-brand-kicker {
@@ -120,7 +127,7 @@
     font-size: 0.67rem;
     text-transform: uppercase;
     letter-spacing: 0.14em;
-    color: rgba(184, 212, 232, 0.5);
+    color: rgba(184, 212, 232, 0.58);
   }
 
   .general-header-actions {
@@ -140,10 +147,10 @@
   .general-header-social-btn {
     width: 34px;
     height: 34px;
-    border: 1px solid rgba(146, 176, 200, 0.2);
+    border: 1px solid rgba(168, 197, 219, 0.18);
     border-radius: 9px;
-    background: rgba(10, 20, 31, 0.78);
-    color: rgba(195, 220, 240, 0.86);
+    background: rgba(15, 28, 40, 0.68);
+    color: rgba(210, 229, 243, 0.86);
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -161,9 +168,9 @@
 
   .general-header-social-btn:hover,
   .general-header-social-btn:focus-visible {
-    background: rgba(94, 174, 212, 0.1);
-    border-color: rgba(94, 174, 212, 0.5);
-    color: #c8e8f8;
+    background: rgba(33, 62, 83, 0.88);
+    border-color: rgba(123, 199, 234, 0.42);
+    color: #ebf7ff;
   }
 
   .general-header-social-btn--github {
@@ -202,9 +209,9 @@
   .general-header-text-btn:hover:not(:disabled) {
     transform: none;
     filter: none;
-    background: rgba(94, 174, 212, 0.1);
-    border-color: rgba(94, 174, 212, 0.5);
-    color: #c8e8f8;
+    background: rgba(33, 62, 83, 0.88);
+    border-color: rgba(123, 199, 234, 0.42);
+    color: #ebf7ff;
   }
 
   .general-header-btn-label {
@@ -222,10 +229,13 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 8px 0;
-    gap: 2px;
-    background: rgba(10, 20, 31, 0.98);
-    border-right: 1px solid rgba(146, 176, 200, 0.1);
+    padding: 10px 0 12px;
+    gap: 4px;
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.025), transparent 30%),
+      rgba(8, 15, 23, 0.92);
+    border-right: 1px solid rgba(168, 197, 219, 0.1);
+    box-shadow: 1px 0 0 rgba(255, 255, 255, 0.02);
     overflow-y: auto;
     scrollbar-width: none;
     z-index: 40;
@@ -246,7 +256,7 @@
     gap: 3px;
     padding: 4px 0;
     border: none;
-    border-radius: 10px;
+    border-radius: 14px;
     background: transparent;
     color: rgba(180, 205, 225, 0.42);
     font-size: 0.5rem;
@@ -257,20 +267,30 @@
     cursor: pointer;
     transition:
       background 0.15s,
-      color 0.15s;
+      color 0.15s,
+      box-shadow 0.15s,
+      border-color 0.15s;
     -webkit-tap-highlight-color: transparent;
+    border: 1px solid transparent;
   }
 
   .desktop-nav-tab:hover {
     transform: none;
     filter: none;
-    background: rgba(94, 174, 212, 0.1);
-    color: rgba(180, 205, 225, 0.72);
+    background: rgba(24, 44, 61, 0.9);
+    border-color: rgba(123, 199, 234, 0.18);
+    color: rgba(210, 228, 242, 0.82);
   }
 
   .desktop-nav-tab.is-active {
-    background: rgba(55, 171, 203, 0.16);
-    color: #7dd8f0;
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent),
+      rgba(68, 163, 204, 0.16);
+    border-color: rgba(123, 199, 234, 0.26);
+    color: #b2ecff;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.04),
+      0 8px 18px rgba(13, 32, 48, 0.28);
   }
 
   .desktop-nav-icon {
@@ -333,14 +353,16 @@
     display: flex;
     align-items: center;
     gap: 6px;
-    background: rgba(20, 36, 52, 0.97);
+    background: rgba(15, 28, 40, 0.84);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
-    border: 1px solid rgba(171, 201, 224, 0.34);
-    border-radius: 12px;
+    border: 1px solid rgba(171, 201, 224, 0.22);
+    border-radius: 16px;
     width: 100%;
-    padding: 1px 6px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.45);
+    padding: 4px 8px;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.04),
+      0 14px 34px rgba(0, 0, 0, 0.34);
   }
 
   .dsk-loc-bar .location-search-stack {
@@ -369,14 +391,14 @@
 
   .dsk-loc-bar .location-input-wrap input {
     margin-top: 0;
-    min-height: 30px;
-    padding: 2px 22px 2px 10px;
+    min-height: 36px;
+    padding: 4px 24px 4px 12px;
     background: transparent;
     border: none;
     border-radius: 0;
     color: #e8f4ff;
     font-family: "Spline Sans Mono", monospace;
-    font-size: 0.82rem;
+    font-size: 0.84rem;
     box-shadow: none;
   }
 
@@ -428,9 +450,9 @@
     width: 30px;
     height: 30px;
     padding: 0;
-    border: 1px solid rgba(157, 189, 214, 0.26);
-    border-radius: 9px;
-    background: rgba(31, 56, 75, 0.62);
+    border: 1px solid rgba(157, 189, 214, 0.18);
+    border-radius: 11px;
+    background: rgba(22, 42, 58, 0.78);
     color: rgba(210, 231, 245, 0.85);
     font-size: 1.05rem;
     display: flex;
@@ -451,15 +473,15 @@
   .dsk-loc-bar button.location-row-icon-btn:hover:not(:disabled) {
     transform: none;
     filter: none;
-    background: rgba(68, 122, 153, 0.38);
-    border-color: rgba(126, 190, 225, 0.58);
+    background: rgba(34, 62, 82, 0.96);
+    border-color: rgba(126, 190, 225, 0.34);
     color: #e5f5ff;
   }
 
   .dsk-loc-bar button.location-row-icon-btn.is-active {
-    background: rgba(31, 56, 75, 0.62);
-    border-color: rgba(157, 189, 214, 0.26);
-    color: rgba(210, 231, 245, 0.85);
+    background: rgba(28, 54, 73, 0.92);
+    border-color: rgba(126, 190, 225, 0.3);
+    color: rgba(222, 239, 250, 0.92);
   }
 
   .dsk-loc-bar button.location-row-icon-btn:disabled {
@@ -492,9 +514,9 @@
     background: var(--overlay-bg);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
-    border: 1px solid rgba(146, 176, 200, 0.18);
-    border-radius: 10px;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(166, 198, 221, 0.16);
+    border-radius: 14px;
+    box-shadow: 0 18px 36px rgba(0, 0, 0, 0.36);
     max-height: 240px;
     overflow-y: auto;
     z-index: 12;
@@ -512,7 +534,7 @@
   .dsk-loc-bar .location-suggestion:hover {
     transform: none;
     filter: none;
-    background: rgba(94, 174, 212, 0.12);
+    background: rgba(57, 118, 151, 0.22);
     color: #ddeeff;
   }
 
@@ -587,12 +609,16 @@
     overflow-y: auto;
     overflow-x: hidden;
     pointer-events: auto;
-    background: var(--sheet-bg);
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent 18%),
+      rgba(10, 19, 29, 0.84);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
-    border: 1px solid rgba(146, 176, 200, 0.14);
-    border-radius: 14px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.45);
+    border: 1px solid rgba(166, 198, 221, 0.16);
+    border-radius: 18px;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.04),
+      0 20px 44px rgba(0, 0, 0, 0.36);
     overscroll-behavior: contain;
     scrollbar-width: none;
   }
@@ -714,7 +740,9 @@
 
   /* Ghost frame: poster floats above ghost map; no more 100vmax overlay */
   .app-shell > .preview-panel .poster-frame {
-    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.65);
+    box-shadow:
+      0 34px 74px rgba(0, 0, 0, 0.58),
+      0 14px 28px rgba(0, 0, 0, 0.28);
     max-height: calc(84vh - 44px);
     width: min(
       calc(100% - 48px),
@@ -737,8 +765,8 @@
     inset: -48px -24px;
     transform: translateY(var(--poster-frame-center-offset-y));
     z-index: 0;
-    opacity: 0.45;
-    filter: blur(6px) saturate(0.75) brightness(0.85);
+    opacity: 0.34;
+    filter: blur(10px) saturate(0.78) brightness(0.72);
     pointer-events: none;
   }
 
@@ -794,11 +822,11 @@
     width: 320px;
     margin: 0;
     z-index: 16;
-    background: rgba(10, 20, 31, 0.72);
+    background: rgba(10, 20, 31, 0.62);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(146, 176, 200, 0.2);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.32);
+    border: 1px solid rgba(166, 198, 221, 0.16);
+    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.28);
   }
 
   .app-shell > .preview-panel .settings-info-card .settings-info-list {
@@ -814,12 +842,12 @@
     top: 14px;
     left: 14px;
     z-index: 15;
-    padding: 4px 10px;
-    border-radius: 8px;
-    background: rgba(9, 16, 24, 0.72);
+    padding: 5px 11px;
+    border-radius: 999px;
+    background: rgba(9, 16, 24, 0.58);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
-    border: 1px solid rgba(146, 176, 200, 0.16);
+    border: 1px solid rgba(166, 198, 221, 0.14);
     font-family: "Spline Sans Mono", monospace;
     font-size: 0.66rem;
     color: rgba(195, 220, 240, 0.65);
@@ -860,10 +888,16 @@
     gap: 16px;
     text-align: left;
     margin: 0;
-    padding: 8px 18px 8px 82px;
-    border-top: 1px solid rgba(146, 176, 200, 0.12);
-    background: var(--overlay-bg);
-    box-shadow: 0 -1px 8px rgba(0, 0, 0, 0.28);
+    padding: 10px 20px 10px 84px;
+    border-top: 1px solid rgba(166, 198, 221, 0.12);
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.025), transparent 100%),
+      rgba(8, 15, 23, 0.92);
+    box-shadow:
+      0 -1px 0 rgba(255, 255, 255, 0.02),
+      0 -10px 28px rgba(0, 0, 0, 0.22);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     white-space: nowrap;
   }
 
@@ -931,9 +965,9 @@
     max-width: min(420px, 55vw);
     padding: 8px 10px;
     border: 1px solid var(--line);
-    border-radius: 8px;
-    background: rgba(10, 20, 31, 0.98);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.42);
+    border-radius: 12px;
+    background: rgba(8, 16, 24, 0.98);
+    box-shadow: 0 18px 36px rgba(0, 0, 0, 0.36);
     font-size: 0.66rem;
     line-height: 1.35;
     white-space: normal;
@@ -1176,7 +1210,7 @@
     gap: 8px;
     padding: 8px 14px;
     border: 1px solid transparent;
-    border-radius: 10px;
+    border-radius: 14px;
     font-family: "Spline Sans Mono", monospace;
     font-size: 0.74rem;
     font-weight: 700;
@@ -1184,7 +1218,9 @@
     letter-spacing: 0.06em;
     cursor: pointer;
     white-space: nowrap;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.05),
+      0 12px 24px rgba(0, 0, 0, 0.22);
     transition:
       background 0.15s,
       border-color 0.15s,
@@ -1198,8 +1234,12 @@
 
   /* Primary = PNG/Download — white/light, like browser-default generate-btn */
   .desktop-export-btn--primary {
-    background: rgba(232, 242, 251, 0.96);
-    border-color: rgba(180, 210, 235, 0.55);
+    background: linear-gradient(
+      135deg,
+      rgba(236, 246, 252, 0.98),
+      rgba(218, 234, 246, 0.96)
+    );
+    border-color: rgba(180, 210, 235, 0.46);
     color: #0d1f2e;
   }
 
@@ -1213,8 +1253,12 @@
 
   /* PDF — dark warm/brown, like mobile .ghost but darker */
   .desktop-export-btn--pdf {
-    background: rgba(48, 22, 8, 0.92);
-    border-color: rgba(255, 142, 94, 0.36);
+    background: linear-gradient(
+      135deg,
+      rgba(58, 28, 11, 0.96),
+      rgba(43, 18, 7, 0.94)
+    );
+    border-color: rgba(255, 142, 94, 0.32);
     color: #ffc6aa;
   }
 
@@ -1233,7 +1277,7 @@
       rgba(42, 126, 79, 0.96),
       rgba(29, 103, 64, 0.96)
     );
-    border-color: rgba(120, 221, 161, 0.56);
+    border-color: rgba(120, 221, 161, 0.42);
     color: #effff5;
   }
 

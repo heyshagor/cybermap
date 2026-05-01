@@ -69,15 +69,17 @@
     display: flex;
     flex: 1;
     min-width: 0;
-    height: 60px;
-    border-radius: 26px;
-    background: var(--overlay-bg);
+    height: 62px;
+    border-radius: 28px;
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 100%),
+      rgba(8, 16, 24, 0.88);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(146, 176, 200, 0.14);
+    border: 1px solid rgba(166, 198, 221, 0.14);
     box-shadow:
-      0 8px 32px rgba(0, 0, 0, 0.55),
-      0 2px 8px rgba(0, 0, 0, 0.35),
+      0 14px 34px rgba(0, 0, 0, 0.44),
+      0 2px 8px rgba(0, 0, 0, 0.24),
       inset 0 1px 0 rgba(255, 255, 255, 0.05);
     overflow: hidden;
     position: relative;
@@ -146,8 +148,8 @@
     gap: 3px;
     margin: 0;
     padding: 6px 0;
-    border: none;
-    border-radius: 20px;
+    border: 1px solid transparent;
+    border-radius: 22px;
     background: transparent;
     color: rgba(180, 205, 225, 0.45);
     font-size: 0.58rem;
@@ -158,7 +160,9 @@
     cursor: pointer;
     transition:
       background 0.15s ease,
-      color 0.15s ease;
+      color 0.15s ease,
+      border-color 0.15s ease,
+      box-shadow 0.15s ease;
     -webkit-tap-highlight-color: transparent;
     scroll-snap-align: start;
   }
@@ -169,8 +173,12 @@
   }
 
   .mobile-nav-tab.is-active {
-    background: rgba(55, 171, 203, 0.16);
-    color: #7dd8f0;
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent),
+      rgba(68, 163, 204, 0.18);
+    border-color: rgba(123, 199, 234, 0.24);
+    color: #b6ecff;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
   }
 
   .mobile-nav-icon {
@@ -190,14 +198,16 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid rgba(146, 176, 200, 0.14);
-    border-radius: 20px;
-    background: var(--overlay-bg);
+    border: 1px solid rgba(166, 198, 221, 0.14);
+    border-radius: 22px;
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 100%),
+      rgba(8, 16, 24, 0.88);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     box-shadow:
-      0 8px 32px rgba(0, 0, 0, 0.55),
-      0 2px 8px rgba(0, 0, 0, 0.35),
+      0 14px 34px rgba(0, 0, 0, 0.44),
+      0 2px 8px rgba(0, 0, 0, 0.24),
       inset 0 1px 0 rgba(255, 255, 255, 0.05);
     color: rgba(180, 205, 225, 0.4);
     cursor: default;
@@ -423,15 +433,20 @@
     width: 60px;
     height: 44px;
     border: 1px solid rgba(165, 198, 221, 0.34);
-    border-radius: 14px;
-    background: rgba(231, 242, 250, 0.96);
+    border-radius: 16px;
+    background: linear-gradient(
+      135deg,
+      rgba(236, 246, 252, 0.98),
+      rgba(220, 236, 248, 0.96)
+    );
     color: #0d1f2e;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     box-shadow:
-      0 8px 20px rgba(0, 0, 0, 0.4),
-      0 2px 8px rgba(0, 0, 0, 0.26);
+      inset 0 1px 0 rgba(255, 255, 255, 0.1),
+      0 12px 24px rgba(0, 0, 0, 0.24),
+      0 2px 8px rgba(0, 0, 0, 0.18);
     opacity: 1;
     transform: translateY(0);
     transition:
@@ -499,9 +514,11 @@
   .mobile-export-modal {
     width: min(100%, 360px);
     border: 1px solid var(--line);
-    border-radius: 14px;
-    background: rgba(9, 18, 27, 0.98);
-    box-shadow: 0 18px 36px rgba(0, 0, 0, 0.48);
+    border-radius: 18px;
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent 16%),
+      rgba(9, 18, 27, 0.98);
+    box-shadow: 0 22px 44px rgba(0, 0, 0, 0.34);
     padding: 12px;
   }
 
@@ -611,7 +628,7 @@
 
   .mobile-export-option {
     min-height: 50px;
-    border-radius: 10px;
+    border-radius: 14px;
     border: 1px solid transparent;
     font-family: "Spline Sans Mono", monospace;
     font-size: 0.92rem;
@@ -623,6 +640,9 @@
     justify-content: center;
     gap: 8px;
     padding: 0 12px;
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.05),
+      0 10px 22px rgba(0, 0, 0, 0.16);
   }
 
   .mobile-export-option:disabled {
@@ -630,14 +650,22 @@
   }
 
   .mobile-export-option--png {
-    background: rgba(231, 242, 250, 0.96);
-    border-color: rgba(165, 198, 221, 0.34);
+    background: linear-gradient(
+      135deg,
+      rgba(236, 246, 252, 0.98),
+      rgba(220, 236, 248, 0.96)
+    );
+    border-color: rgba(165, 198, 221, 0.28);
     color: #0d1f2e;
   }
 
   .mobile-export-option--pdf {
-    background: rgba(48, 22, 8, 0.92);
-    border-color: rgba(255, 142, 94, 0.36);
+    background: linear-gradient(
+      135deg,
+      rgba(58, 28, 11, 0.96),
+      rgba(43, 18, 7, 0.94)
+    );
+    border-color: rgba(255, 142, 94, 0.3);
     color: #ffc6aa;
   }
 
@@ -647,7 +675,7 @@
       rgba(42, 126, 79, 0.96),
       rgba(29, 103, 64, 0.96)
     );
-    border-color: rgba(120, 221, 161, 0.56);
+    border-color: rgba(120, 221, 161, 0.42);
     color: #effff5;
   }
 
@@ -686,9 +714,9 @@
   .mobile-drawer-backdrop {
     position: absolute;
     inset: 0;
-    background: rgba(2, 6, 10, 0.22);
-    backdrop-filter: none;
-    -webkit-backdrop-filter: none;
+    background: rgba(2, 6, 10, 0.34);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
     touch-action: none;
     animation: backdrop-fadein 0.2s ease;
   }
@@ -705,8 +733,10 @@
   .mobile-drawer-sheet {
     position: relative;
     z-index: 1;
-    background: var(--sheet-bg);
-    border-top: 1px solid rgba(146, 176, 200, 0.16);
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent 16%),
+      rgba(8, 16, 24, 0.96);
+    border-top: 1px solid rgba(166, 198, 221, 0.14);
     border-radius: 24px 24px 0 0;
     padding-bottom: env(safe-area-inset-bottom, 0px);
     height: min(38vh, 360px);
@@ -718,6 +748,9 @@
     transition:
       transform 0.28s cubic-bezier(0.32, 0.72, 0, 1),
       height 0.24s cubic-bezier(0.32, 0.72, 0, 1);
+    box-shadow:
+      0 -16px 42px rgba(0, 0, 0, 0.32),
+      inset 0 1px 0 rgba(255, 255, 255, 0.04);
   }
 
   .mobile-drawer-sheet.is-expanded {
@@ -849,13 +882,19 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 14px 8px;
+    padding: 11px 14px 9px;
     margin-bottom: 0;
     position: relative;
     z-index: 35;
-    background: var(--overlay-bg);
-    border-bottom: 1px solid rgba(146, 176, 200, 0.12);
-    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.28);
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent 100%),
+      rgba(9, 16, 24, 0.9);
+    border-bottom: 1px solid rgba(168, 197, 219, 0.14);
+    box-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.03),
+      0 10px 28px rgba(0, 0, 0, 0.22);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
   }
 
   .general-header .desktop-brand {
@@ -883,8 +922,8 @@
     font-family: "Bebas Neue", sans-serif;
     font-size: 1.56rem;
     line-height: 0.95;
-    letter-spacing: 0.03em;
-    color: #ecf5ff;
+    letter-spacing: 0.04em;
+    color: #f3f9fe;
   }
 
   .general-header .desktop-brand-kicker {
@@ -913,9 +952,9 @@
   .desktop-header-social .general-header-social-btn {
     width: 34px;
     height: 34px;
-    border: 1px solid rgba(146, 176, 200, 0.2);
+    border: 1px solid rgba(168, 197, 219, 0.18);
     border-radius: 9px;
-    background: rgba(10, 20, 31, 0.78);
+    background: rgba(15, 28, 40, 0.68);
     color: rgba(195, 220, 240, 0.86);
     display: inline-flex;
     align-items: center;
@@ -935,9 +974,9 @@
     width: 34px;
     height: 34px;
     padding: 0;
-    border: 1px solid rgba(146, 176, 200, 0.2);
+    border: 1px solid rgba(168, 197, 219, 0.18);
     border-radius: 9px;
-    background: rgba(10, 20, 31, 0.78);
+    background: rgba(15, 28, 40, 0.68);
     color: rgba(195, 220, 240, 0.86);
     display: inline-flex;
     align-items: center;
@@ -1323,7 +1362,7 @@
     border: none;
     border-radius: 0;
     margin: 0;
-    padding: 14px 0 10px;
+    padding: 16px 0 12px;
     background: #080f18;
   }
 
@@ -1332,8 +1371,8 @@
     position: absolute;
     inset: 0;
     z-index: 0;
-    opacity: 0.42;
-    filter: blur(5px) saturate(0.78) brightness(0.84);
+    opacity: 0.3;
+    filter: blur(9px) saturate(0.78) brightness(0.7);
     pointer-events: none;
   }
 
@@ -1355,12 +1394,12 @@
     max-height: 150vh;
     z-index: 2;
     overflow: visible;
-    border-radius: 4px;
-    border: 1px solid rgba(179, 210, 230, 0.24);
+    border-radius: 6px;
+    border: 1px solid rgba(179, 210, 230, 0.18);
     box-shadow:
-      0 12px 28px rgba(0, 0, 0, 0.45),
-      0 4px 10px rgba(0, 0, 0, 0.32);
-    margin-bottom: 56px;
+      0 20px 40px rgba(0, 0, 0, 0.4),
+      0 6px 12px rgba(0, 0, 0, 0.22);
+    margin-bottom: 60px;
   }
 
   .poster-frame .map-controls {
@@ -1381,8 +1420,8 @@
 
   .map-controls-section {
     margin: 0 8px;
-    padding: 8px 10px;
-    border-top: 1px solid rgba(146, 176, 200, 0.1);
+    padding: 10px 10px 8px;
+    border-top: 1px solid rgba(166, 198, 221, 0.08);
   }
 
   /* ────────────────────────────────────
@@ -1394,12 +1433,14 @@
 
   .settings-panel {
     margin: 8px 8px 0;
-    padding: 14px;
-    border: 1px solid var(--line);
-    border-radius: 14px;
-    background: var(--sheet-bg);
+    padding: 15px;
+    border: 1px solid rgba(166, 198, 221, 0.14);
+    border-radius: 18px;
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent 16%),
+      rgba(9, 18, 27, 0.94);
     box-shadow:
-      0 8px 20px rgba(0, 0, 0, 0.28),
+      0 14px 32px rgba(0, 0, 0, 0.24),
       inset 0 1px 0 rgba(255, 255, 255, 0.04);
   }
 
@@ -1474,12 +1515,14 @@
   .mobile-persistent-footer {
     display: none;
     margin: 8px 8px 0;
-    padding: 14px;
-    border: 1px solid var(--line);
-    border-radius: 14px;
-    background: var(--panel);
+    padding: 15px;
+    border: 1px solid rgba(166, 198, 221, 0.14);
+    border-radius: 18px;
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent 16%),
+      rgba(10, 20, 31, 0.9);
     box-shadow:
-      0 8px 20px rgba(0, 0, 0, 0.28),
+      0 14px 32px rgba(0, 0, 0, 0.24),
       inset 0 1px 0 rgba(255, 255, 255, 0.04);
   }
 
@@ -1525,10 +1568,12 @@
     width: min(560px, calc(100vw - 24px));
     max-height: min(82vh, 760px);
     overflow-y: auto;
-    border: 1px solid rgba(146, 176, 200, 0.2);
-    border-radius: 16px;
-    background: var(--sheet-bg);
-    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.55);
+    border: 1px solid rgba(166, 198, 221, 0.16);
+    border-radius: 18px;
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.03), transparent 16%),
+      rgba(9, 18, 27, 0.96);
+    box-shadow: 0 28px 56px rgba(0, 0, 0, 0.42);
     padding: 20px 16px 16px;
   }
 
