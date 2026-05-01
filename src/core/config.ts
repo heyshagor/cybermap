@@ -66,7 +66,7 @@ export const UPDATES_URL = String(
 export const APP_CREDIT_TEXT =
   import.meta.env.VITE_APP_CREDIT_TEXT ?? "heyshagor.github.io";
 export const OSM_ATTRIBUTION_TEXT =
-  import.meta.env.VITE_OSM_ATTRIBUTION_TEXT ?? "Cypermap";
+  import.meta.env.VITE_OSM_ATTRIBUTION_TEXT ?? "CyberMap";
 export const USE_LOGO_BADGES =
   import.meta.env.VITE_USE_LOGO_BADGES ?? false;
 
